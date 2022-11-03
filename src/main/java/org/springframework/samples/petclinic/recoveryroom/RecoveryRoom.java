@@ -1,11 +1,15 @@
 package org.springframework.samples.petclinic.recoveryroom;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.PositiveOrZero;
 
 import org.springframework.samples.petclinic.model.NamedEntity;
+import org.springframework.samples.petclinic.pet.Visit;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,8 +21,9 @@ import lombok.Setter;
 
 public class RecoveryRoom extends NamedEntity{
 	@PositiveOrZero
-    double size;
-    boolean secure;
+    private double size;
+    private boolean secure;
     @Transient
-    RecoveryRoomType roomType;
+    private RecoveryRoomType roomType;
+
 }
